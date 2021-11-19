@@ -1,7 +1,16 @@
 <h1>More info: </h1>
 
-<p> - <%= @list.title %> - </p>
-<p> Pitch: "<%= @list.overview %>"</p>
-<p> Rating : <%= @list.rating %> </p>
+<ol>
+   <li><%= @list.name%> </li>
+</ol>
 
-<%= link_to "Main menu", list_path %>
+<%= link_to "Main menu", lists_path %>
+
+<% @list.bookmarks.each do |item| %>
+<%= item.movie.title %>
+<%= link_to "Delete", bookmark_path(item), method: :delete, data: { confirm: "Are you sure?" } %>
+<% end %>
+
+
+<!--afficher tous les bookmarks associés a la liste
+#creer des liens de suppression pour chacun des bookmark-->

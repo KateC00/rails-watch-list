@@ -1,7 +1,7 @@
 <h1>List :</h1>
 
 <ol>
-  <% @list.each do |item| %>
-    <li><%= item.name %> <%= link_to "+", list_path %> </li>
+  <% @lists.each do |item| %>
+    <li><%= item.name %> <%= link_to "+", list_path(item)%> </li>
   <% end %>
 </ol>
